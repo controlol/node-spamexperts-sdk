@@ -1,0 +1,22 @@
+{
+  "name": "spamexperts-sdk",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "npx tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/node": "^22.10.1",
+    "got": "^14.4.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "utility-types": "^3.11.0"
+  }
+}
