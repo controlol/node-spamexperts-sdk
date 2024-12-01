@@ -11,8 +11,6 @@ export const list = async (withservices) => {
   /** @type {import("got").Response<import("./types.js").DomainListResponse>} */
   const res = await api(url, { responseType: "json" })
 
-  console.log(res.body)
-
   if ((!Array.isArray(res.body.messages)) && res.body.messages.error) {
     throw new Error(res.body.messages.error.join("\n"))
   }
@@ -55,8 +53,6 @@ export const remove = async (domain) => {
   /** @type {import("got").Response<import("./types.js").DomainAddResponse>} */
   const res = await api(url, { responseType: "json" })
 
-  console.log(res.body, res.statusCode)
-
   if ((!Array.isArray(res.body.messages)) && res.body.messages.error) {
     throw new Error(res.body.messages.error.join("\n"))
   }
@@ -73,8 +69,6 @@ export const exists = async (domain) => {
   const url = toApiUrl("domain", "exists", { domain })
   /** @type {import("got").Response<import("./types.js").DomainExistsResponse>} */
   const res = await api(url, { responseType: "json" })
-
-  console.log(res.body, res.statusCode, res.statusMessage)
 
   if ((!Array.isArray(res.body.messages)) && res.body.messages.error) {
     return false

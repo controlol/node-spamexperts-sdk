@@ -37,11 +37,8 @@ export const setProducts = async (domain, products) => {
     domain,
     ...products
   })
-  console.log({url})
   /** @type {import("got").Response<import("./types.js").DomainGetProductsResponse>} */
   const res = await api(url, { responseType: "json" })
-
-  console.log(res.body)
 
   if ((!Array.isArray(res.body.messages)) && res.body.messages.error) {
     throw new Error(res.body.messages.error.join("\n"))
